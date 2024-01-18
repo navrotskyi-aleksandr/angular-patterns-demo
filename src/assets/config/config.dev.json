@@ -1,0 +1,26 @@
+{
+    "env": {
+        "name": "DEV"
+    },
+    "appInsights": {
+        "instrumentationKey": "<your-key-here>"
+    },
+    "logging": {
+        "console": true,
+        "appInsights": false,
+        "traceEnabled": false
+    },
+    "aad": {
+        "requireAuth": false,
+        "tenant": "microsoft.onmicrosoft.com",
+        "clientId": "<your-guid-here>",
+        "endpoints": {
+            "api": "<your-guid-here>"
+        }
+    },
+    "apiServer": {
+        "metadata": "https://ng-demo-metadata.azurewebsites.net/api/",
+        "rules": "https://ng-demo-rules.azurewebsites.net/api/",
+        "transaction": "https://ng-demo-transaction.azurewebsites.net/api/"
+    }
+}

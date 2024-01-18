@@ -1,0 +1,60 @@
+<div class="main-content pad-main-content-on">
+    <la-account-header (postChanges)="postChanges()"></la-account-header>
+    <la-header-menu></la-header-menu>
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="form">
+                <div class="form-group">
+                    <la-component-header [title]="'Child Component #3'" [form]="form" [isEditable]="editMode" (onSave)="save()" (toggleEdit)="toggleEditMode($event)">
+                    </la-component-header>
+                    <la-error-message [errorList]="errorsFromServer"></la-error-message>
+                    <div class="row">
+                        <div class="col-md-4"  style="margin-top: -1.3em;">
+                            <h3>Year End</h3>
+                            <div class="well">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <la-field [label]="'Admin Year End'" [editMode]="editMode" [type]="'date?'" formControlName="adminYearEndDate" [dateFormat]="'MM/DD'">
+                                        </la-field>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <la-field [label]="'Statement Year End'" [editMode]="editMode" [type]="'date?'" formControlName="statementYearEndDate" [dateFormat]="'MM/DD'">
+                                        </la-field>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="margin-top: -1.3em;">
+                            <h3>Frequency</h3>
+                            <div class="well">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <la-list [label]="'Admin Frequency'" [editMode]="editMode" [parentFormGroup]="form" [choices]="child3.timePeriodList"
+                                                formControlName="adminFrequencyPerYear" [includeEmptyChoice]="true">
+                                        </la-list>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <la-list [label]="'Statement Frequency'" [editMode]="editMode" [parentFormGroup]="form" [choices]="child3.timePeriodList"
+                                            formControlName="statementFrequencyPerYear" [includeEmptyChoice]="true">
+                                        </la-list>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <la-list [label]="'Processing Frequency'" [editMode]="editMode" [parentFormGroup]="form" [choices]="child3.timePeriodList"
+                                            formControlName="processingFrequencyPerYear" [includeEmptyChoice]="true">
+                                        </la-list>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <la-list [label]="'Billing Frequency'" [editMode]="editMode" [parentFormGroup]="form" [choices]="child3.timePeriodList"
+                                            formControlName="billingFrequencyPerYear" [includeEmptyChoice]="true">
+                                        </la-list>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                  
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<la-transaction-confirm-dialog></la-transaction-confirm-dialog>

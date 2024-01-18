@@ -1,0 +1,9 @@
+[user]
+email = navrotskyi.aleksandr@gmail.com
+name = Navrotskyi Aleksandr
+
+[github]
+user = "navrotskyi-aleksandr"
+
+[core]
+sshCommand = "ssh -i ~/.ssh/github-navrik"
